@@ -46,8 +46,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $this->category->find($id)->delete();
-
+      
+        $category = $this->category->find($id);
+        $category->projects()->delete();
+        $category->delete();
         return back()->with('danger',trans('success.delete'));
     }
 }

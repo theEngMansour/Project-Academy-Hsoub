@@ -42,7 +42,7 @@ class ProjectController extends Controller
     }
     public function index()
     {
-        return view('company.home.projects.index',['projects' =>$this->projects::with('category')->latest()->get()]);
+        return view('company.home.projects.index',['projects' =>$this->projects::with('category')->latest()->paginate(10)]);
     }
 
     public function search(Request $request)

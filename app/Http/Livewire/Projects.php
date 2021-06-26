@@ -70,7 +70,10 @@ class Projects extends Component
         $this->category_id  = Null;
         $this->image_path   = Null;
 
-        return back()->with('success',trans('alerts.success.update'));
+         back()->with('success',trans('alerts.success.update'));
+
+     return redirect()->route('project.home');
+
     }
 
     public function render()
